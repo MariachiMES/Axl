@@ -1,5 +1,6 @@
 const word = document.querySelector("#word");
 const nextBtn = document.querySelector("#next");
+const prevBtn = document.querySelector("#previous");
 let wordList = [];
 wordList.push(localStorage.getItem("wordList"));
 let usedWords = [];
@@ -7,27 +8,37 @@ let usedWords = [];
 if (wordList.length < 2) {
   wordList = wordList[0].split(",");
 }
-console.log(wordList);
-function randomWord() {
+
+function setInitialWord() {
   random = Math.floor(Math.random() * wordList.length);
   nextWord = wordList[random];
   word.innerHTML = nextWord;
-  if (usedWords.includes(nextWord)) {
-    console.log("word is in usedwords" + usedWords);
-    randomWord();
-  }
-
-  if (prevWord == nextWord) {
-    console.log("its the same");
-    randomWord();
-  } else {
-    console.log("it's different");
-    word.innerHTML = nextWord;
-    usedWords.push(word.innerHTML);
-    console.log(usedWords);
-  }
 }
-randomWord();
-nextBtn.addEventListener("click", randomWord);
 
-console.log(random);
+setInitialWord();
+
+let prevArray = [];
+let wordsRemaining = wordList;
+
+function randomWord() {
+  if (wordsRemaining.length === 0) {
+    alert("you fuggin win!");
+    return;
+  }
+  random = Math.floor(Math.random() * wordsRemaining.length);
+  nextWord = wordsRemaining[random];
+  if (prevArray.includes(nextWord)) {
+    randomWord();
+  }
+  wordsRemaining.splice(random, 1);
+  prevArray.push(nextWord);
+  word.innerHTML = nextWord;
+  return prevArray;
+}
+
+function prevWord() {
+  console.log(prevArray);
+}
+
+nextBtn.addEventListener("click", randomWord);
+prevBtn.addEventListener("click", prevWord);

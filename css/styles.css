@@ -4,3 +4,22 @@
 .playGame {
   color: blue;
 }
+body {
+  background-image: url("../images/AddNewWords.png");
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  background-color: black;
+  display: block;
+}
+.input {
+}
+
+#new-word {
+  height: 90px;
+  width: 320px;
+  margin: 20px;
+
+  background-color: black;
+  color: greenyellow;
+  font-size: 60px;
+}
