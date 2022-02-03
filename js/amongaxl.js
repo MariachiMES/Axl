@@ -1,6 +1,5 @@
 const word = document.querySelector("#word");
 const nextBtn = document.querySelector("#next");
-const prevBtn = document.querySelector("#previous");
 let wordList = [];
 wordList.push(localStorage.getItem("wordList"));
 let usedWords = [];
@@ -41,4 +40,3 @@ function prevWord() {
 }
 
 nextBtn.addEventListener("click", randomWord);
-prevBtn.addEventListener("click", prevWord);
