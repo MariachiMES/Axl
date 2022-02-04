@@ -26,7 +26,11 @@ body {
   margin: 10%;
   background-color: black;
   color: rgb(73, 255, 73);
-  font-size: 60px;
+  font-size: 13vw;
+  border: none;
+}
+#new-word:focus {
+  outline: none;
 }
 .buttons {
   margin-top: 5vw;
