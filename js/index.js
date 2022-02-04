@@ -4,7 +4,7 @@ const playGameBtn = document.querySelector("#play-game");
 let wordList = [];
 wordList.push(localStorage.getItem("wordList"));
 
-if (wordList.length > 0) {
+if (wordList.length !== 0) {
   wordList = wordList[0].split(",");
 }
 console.log(wordList);
