@@ -5,9 +5,10 @@ let wordList = [];
 wordList.push(localStorage.getItem("wordList"));
 
 if (wordList[0] !== null) {
+  console.log("not gonna split");
   wordList = wordList[0].split(",");
 } else {
-  return;
+  console.log(wordList);
 }
 console.log(wordList);
 
