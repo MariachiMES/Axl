@@ -4,9 +4,9 @@ const playGameBtn = document.querySelector("#play-game");
 let wordList = [];
 wordList.push(localStorage.getItem("wordList"));
 
-if (wordList[0] !== null) {
-  console.log("not gonna split");
-  wordList = wordList[0].split(",");
+if (wordList[0] === null) {
+  console.log("need to split it");
+  // wordList = wordList[0].split(",");
 } else {
   console.log("what is in here " + wordList);
 }
