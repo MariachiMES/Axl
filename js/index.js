@@ -8,7 +8,7 @@ if (wordList[0] !== null) {
   console.log("not gonna split");
   wordList = wordList[0].split(",");
 } else {
-  console.log(wordList);
+  console.log("what is in here " + wordList);
 }
 console.log(wordList);
 
