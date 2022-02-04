@@ -21,7 +21,7 @@ let wordsRemaining = wordList;
 
 function randomWord() {
   if (wordsRemaining.length === 0) {
-    alert("you fuggin win!");
+    alert("There are no more words.  Please, play some more!");
     return;
   }
   random = Math.floor(Math.random() * wordsRemaining.length);
