@@ -6,8 +6,8 @@ wordList.push(localStorage.getItem("wordList"));
 
 if (wordList[0] === null) {
   console.log("need to split it");
-  // wordList = wordList[0].split(",");
 } else {
+  wordList = wordList[0].split(",");
   console.log("what is in here " + wordList);
 }
 console.log(wordList);
@@ -15,7 +15,6 @@ console.log(wordList);
 function displayButton() {
   if (wordList[0] == null) {
     playGameBtn.classList.add("is-hidden");
-    console.log("nothing here");
   } else {
     playGameBtn.classList.remove("is-hidden");
   }
